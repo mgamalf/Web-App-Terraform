@@ -1,181 +1,87 @@
-NTI Project Terraform
-Private AWS Web Architecture with Terraform & Load Balancing
-📌 Project Overview
+# NTI Project Terraform
+## Secure AWS Infrastructure Using Terraform (AWS Academy)
 
-This project demonstrates how to build a secure, highly available AWS web architecture using Terraform as Infrastructure as Code (IaC).
+---
 
-The infrastructure is deployed in AWS (eu-west-3 – Paris) and follows best practices:
+## 📌 Project Description
 
-Private EC2 instances (no public IPs)
+This project demonstrates how to provision a **secure, highly available AWS infrastructure**
+using **Terraform** as Infrastructure as Code (IaC).
 
-Application Load Balancer (ALB)
+The infrastructure follows AWS best practices by using:
+- Private EC2 instances
+- Application Load Balancer
+- Multi-AZ deployment
+- Remote Terraform state stored in S3
+- State locking using DynamoDB
 
-Multi-AZ deployment
+The project was built using **WSL Ubuntu**, **Terraform**, and **AWS Academy**.
 
-Remote Terraform state using S3
+---
 
-State locking with DynamoDB
+## 🏗️ Architecture Overview
 
-Automated Apache installation using user data
+The infrastructure includes:
 
-This project was developed using WSL Ubuntu and AWS Academy.
+- One VPC with CIDR block `10.0.0.0/16`
+- Two public subnets (for ALB and NAT Gateway)
+- Two private subnets (for EC2 instances)
+- Internet Gateway for public access
+- NAT Gateway for outbound internet access from private subnets
+- Application Load Balancer (HTTP on port 80)
+- Two EC2 instances running Apache Web Server
+- Terraform backend using S3 and DynamoDB
 
-🏗️ Architecture Overview
+All EC2 instances are deployed in **private subnets** and are only accessible through the **Application Load Balancer**.
 
-High-level design:
+---
 
-One VPC (10.0.0.0/16)
+## 📂 Project architecture
+<img width="919" height="790" alt="image" src="https://github.com/user-attachments/assets/4d538df2-f797-4752-b244-3bc8e04bee3f" />
 
-2 Public Subnets (ALB + NAT Gateway)
 
-2 Private Subnets (EC2 instances)
 
-Internet Gateway for public access
+---
 
-NAT Gateway for outbound internet from private subnets
+## ⚙️ Technologies Used
 
-Application Load Balancer (HTTP – Port 80)
+- Terraform
+- AWS (Academy Account)
+- Amazon VPC
+- EC2 (Amazon Linux 2023)
+- Application Load Balancer (ALB)
+- S3 (Terraform remote state)
+- DynamoDB (State locking)
+- Apache HTTP Server
+- WSL Ubuntu
 
-Apache Web Servers running on Amazon Linux 2023
+---
 
-Terraform backend stored in S3 with DynamoDB locking
+## 🔐 Terraform Backend Configuration
 
-📂 Project Structure
-nti_project_terraform/
-├── backend.tf          # Terraform remote backend (S3 + DynamoDB)
-├── provider.tf         # AWS provider configuration
-├── main.tf             # All infrastructure resources
-├── variables.tf        # Input variables
-├── terraform.tfvars    # Variable values
-├── outputs.tf          # Terraform outputs
-├── setup_apache.sh     # Apache installation & HTML setup (user_data)
-├── html.html           # Optional static HTML file
-└── README.md           # Project documentation
+Terraform state is stored remotely using:
+- **Amazon S3** for state storage
+- **Amazon DynamoDB** for state locking
 
-⚙️ Technologies Used
+This ensures:
+- Safe state management
+- No concurrent state conflicts
+- Better collaboration support
 
-Terraform
+---
 
-AWS (Academy Account)
+## 🚀 How to Deploy the Project
 
-Amazon VPC
+### 1️⃣ Prerequisites
 
-EC2 (Amazon Linux 2023)
+- Terraform installed
+- AWS CLI configured
+- AWS Academy credentials active
+- S3 bucket and DynamoDB table already created
 
-Application Load Balancer
+---
 
-S3 (Terraform state storage)
+### 2️⃣ Initialize Terraform
 
-DynamoDB (state locking)
-
-Apache HTTP Server
-
-WSL Ubuntu
-
-🔐 Terraform Remote Backend
-
-Terraform state is securely stored using:
-
-S3 Bucket – Remote state storage
-
-DynamoDB Table – State locking to prevent conflicts
-
-This setup ensures:
-
-Safe collaboration
-
-Versioned state
-
-Protection from accidental overwrites
-
-🚀 Deployment Steps
-1️⃣ Prerequisites
-
-AWS CLI configured
-
-Terraform installed
-
-S3 bucket and DynamoDB table already created
-
-AWS credentials exported (AWS Academy session)
-
-2️⃣ Initialize Terraform
+```bash
 terraform init -reconfigure
-
-3️⃣ Validate Configuration
-terraform validate
-
-4️⃣ Review Execution Plan
-terraform plan
-
-5️⃣ Deploy Infrastructure
-terraform apply
-
-6️⃣ Access the Application
-
-After deployment, get the Load Balancer DNS:
-
-terraform output alb_dns_name
-
-
-Open the URL in a browser to view the NTI DevSecOps Apache Web Page.
-Refreshing the page will show load balancing between servers.
-
-🧪 User Data Automation
-
-EC2 instances automatically install and configure Apache using:
-
-setup_apache.sh
-
-
-This script:
-
-Updates the system
-
-Installs Apache
-
-Starts and enables the service
-
-Deploys a custom NTI HTML page
-
-🛡️ Security Best Practices Applied
-
-EC2 instances in private subnets
-
-No public IPs on EC2
-
-Only ALB exposed to the internet
-
-Security groups restrict access
-
-Centralized infrastructure control via Terraform
-
-🧹 Cleanup (Destroy Resources)
-
-To avoid unnecessary costs:
-
-terraform destroy
-
-
-⚠️ The S3 backend bucket is protected and will not be destroyed automatically.
-
-📈 Learning Outcomes
-
-Through this project, I learned:
-
-How to design secure AWS architectures
-
-Terraform project structuring
-
-Remote state management with S3 & DynamoDB
-
-Automating EC2 configuration with user data
-
-Load balancing across multiple availability zones
-
-Best practices for cloud infrastructure deployment
-
-👨‍💻 Author
-
-NTI DevSecOps – Egypt
-Infrastructure built using Terraform & AWS
