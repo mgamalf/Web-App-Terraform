@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Telecommunication Institute - NTI Egypt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .flag {
+            font-size: 2em;
+            animation: wave 2s ease-in-out infinite;
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(20deg); }
+            75% { transform: rotate(-20deg); }
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .info-section {
+            margin-bottom: 30px;
+        }
+        
+        .info-section h2 {
+            color: #2a5298;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .info-section p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        
+        .server-info {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .server-info h3 {
+            color: #2a5298;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: #2a5298;
+        }
+        
+        .info-value {
+            color: #667eea;
+            font-family: 'Courier New', monospace;
+            background: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+        
+        .footer {
+            background: #f5f7fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            background: #4caf50;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .feature {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌐 National Telecommunication Institute</h1>
+            <div class="subtitle">
+                <span class="flag">🇪🇬</span>
+                <span>NTI - Egypt</span>
+            </div>
+            <div class="status-badge">✓ Service Active</div>
+        </div>
+        
+        <div class="content">
+            <div class="info-section">
+                <h2>About NTI</h2>
+                <p>
+                    The National Telecommunication Institute (NTI) is Egypt's premier institution 
+                    for telecommunications and information technology training. Established to support 
+                    Egypt's digital transformation, NTI provides cutting-edge education and research 
+                    in telecommunications, networking, cybersecurity, and cloud technologies.
+                </p>
+            </div>
+            
+            <div class="info-section">
+                <h2>Our Mission</h2>
+                <p>
+                    NTI is dedicated to developing skilled professionals in ICT fields, supporting 
+                    Egypt's Vision 2030 for digital transformation and economic growth. We offer 
+                    world-class training programs, certifications, and research opportunities in 
+                    telecommunications and information technology.
+                </p>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📚</div>
+                    <div>Professional Training</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <div>Cybersecurity</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">☁️</div>
+                    <div>Cloud Computing</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌐</div>
+                    <div>Networking</div>
+                </div>
+            </div>
+            
+            <div class="server-info">
+                <h3>🖥️ Server Information</h3>
+                <div class="info-item">
+                    <span class="info-label">Server IP Address:</span>
+                    <span class="info-value" id="ip-address">PRIVATE_IP_PLACEHOLDER</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Instance ID:</span>
+                    <span class="info-value" id="instance-id">INSTANCE_ID_PLACEHOLDER</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Availability Zone:</span>
+                    <span class="info-value" id="az">AZ_PLACEHOLDER</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Web Server:</span>
+                    <span class="info-value">Apache httpd</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Infrastructure:</span>
+                    <span class="info-value">AWS Cloud</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2024 National Telecommunication Institute - Egypt</p>
+            <p>Powered by AWS Infrastructure | Load Balanced Architecture</p>
+        </div>
+    </div>
+</body>
+</html>
