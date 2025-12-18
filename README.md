@@ -21,6 +21,8 @@ The project was built using **WSL Ubuntu**, **Terraform**, and **AWS Academy**.
 
 ## 🏗️ Architecture Overview
 
+<img width="919" height="790" alt="image" src="https://github.com/user-attachments/assets/4d538df2-f797-4752-b244-3bc8e04bee3f" />
+
 The infrastructure includes:
 
 - One VPC with CIDR block `10.0.0.0/16`
@@ -36,12 +38,6 @@ All EC2 instances are deployed in **private subnets** and are only accessible th
 
 ---
 
-## 📂 Project architecture
-<img width="919" height="790" alt="image" src="https://github.com/user-attachments/assets/4d538df2-f797-4752-b244-3bc8e04bee3f" />
-
-
-
----
 
 ## ⚙️ Technologies Used
 
