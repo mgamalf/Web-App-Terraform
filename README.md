@@ -1,5 +1,5 @@
 # NTI Project Terraform
-## Secure AWS Infrastructure Using Terraform (AWS Academy)
+## Secure AWS Infrastructure Using Terraform (AWS )
 
 ---
 
@@ -15,7 +15,7 @@ The infrastructure follows AWS best practices by using:
 - Remote Terraform state stored in S3
 - State locking using DynamoDB
 
-The project was built using **WSL Ubuntu**, **Terraform**, and **AWS Academy**.
+The project was built using **WSL Ubuntu**, **Terraform**, and **AWS**.
 
 ---
 
@@ -42,7 +42,7 @@ All EC2 instances are deployed in **private subnets** and are only accessible th
 ## ⚙️ Technologies Used
 
 - Terraform
-- AWS (Academy Account)
+- AWS
 - Amazon VPC
 - EC2 (Amazon Linux 2023)
 - Application Load Balancer (ALB)
@@ -72,7 +72,6 @@ This ensures:
 
 - Terraform installed
 - AWS CLI configured
-- AWS Academy credentials active
 - S3 bucket and DynamoDB table already created
 
 ---
